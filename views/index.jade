@@ -1,6 +1,9 @@
 extends layout
-
 block content
-  h1= title
-  p Welcome to #{title}
-  div(class='container' id = 'contenedor')= 'Hola CRUD con node js'
+  include templates/nav
+  div(class=['ui', 'container', 'grid', 'stackable'])
+    div(class=['ten', 'wide', 'column'])
+    
+    h2(class=['ui', 'header', 'blue'])= 'Bienvenido al CRUD con Node JS, SemanticUI, Express JS, y Mysql'
+  
+ 
