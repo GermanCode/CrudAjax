@@ -6,4 +6,23 @@ block content
 
       h2(class=['ui', 'header', 'blue', 'dividing'])= 'Lista de Productos'
   
-      p= productos[0].nombre
+      table(class=['ui', 'table', 'celled'] id = 'tbl-productos')
+        thead
+            tr
+                th='ID'
+                th='Nombre'
+                th='Precio'
+                th='Stock'
+                th='Fecha de Creacion'
+                th='Acciones'
+        tbody
+            each producto in productos
+              tr
+                td= producto.id_producto
+                td= producto.nombre
+                td= producto.precio
+                td= producto.stock
+                td= producto.fecha_creacion
+                td= 'Eliminar Modificar'
+
+
