@@ -1,0 +1,9 @@
+extends ../layout
+block content
+  include ../templates/nav
+  div(class=['ui', 'container', 'grid', 'stackable'])
+    div(class=['sixteen', 'wide', 'column'])
+
+      h2(class=['ui', 'header', 'blue', 'dividing'])= 'Lista de Productos'
+  
+      p= productos[0].nombre
