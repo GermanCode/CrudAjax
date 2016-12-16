@@ -23,6 +23,10 @@ module.exports = {
             res.render('productos/productos', {productos : productos});
         });
         
+    },
+
+    getNuevoProducto : function(req, res, next){
+        res.render('productos/nuevo');  
     }
 
 

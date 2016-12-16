@@ -6,7 +6,7 @@ var controllers = require('.././controllers');
 router.get('/', controllers.homecontroller.index);
 
 //rutas para productos
-router.get('/productos', controllers.productoscontroller.getProductos)
-
+router.get('/productos', controllers.productoscontroller.getProductos);
+router.get('/nuevo', controllers.productoscontroller.getNuevoProducto);
 
 module.exports = router;
