@@ -7,14 +7,18 @@ block content
       h2(class=['ui', 'header', 'blue', 'dividing'])= 'Crear Producto'
 
       div(class='form-nuevoproducto')
-        form(class=['ui', 'form'] action='' method='post')
+        form(class=['ui', 'form'] action='http://localhost:3000/crearproducto' method='post')
             div(class=['ui', 'field'])
                 label(for='nombre')= 'Nombre del producto'
-                input(type='text' name ='nombre')
+                input(type='text' name ='nombre' placeholder='Nombre')
             div(class=['ui', 'two', 'fields'])
                 div(class=['ui', 'field'])
-                    label(for='nombre')= 'Nombre del producto'
-                    input(type='text' name ='nombre')
+                    label(for='precio')= 'Precio'
+                    input(type='text' name ='precio' plaeholder='Precio')
                 div(class=['ui', 'field'])
-                    label(for='nombre')= 'Nombre del producto'
-                    input(type='text' name ='nombre')
+                    label(for='stock')= 'Stock'
+                    input(type='text' name ='stock' placeholder='Stock')
+            button(class=['ui', 'button', 'basic', 'black'])= 'Crear Producto'
+            div(class=['ui', 'message', 'error'])
+
+    script(src='/javascripts/validacion.js')

@@ -27,7 +27,9 @@ module.exports = {
 
     getNuevoProducto : function(req, res, next){
         res.render('productos/nuevo');  
+    },
+
+    postNuevoProducto : function(req, res, next){
+        console.log(req.body);
     }
-
-
 }
