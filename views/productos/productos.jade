@@ -18,11 +18,17 @@ block content
         tbody
             each producto in productos
               tr
-                td= producto.id_producto
+                td(id='id_producto')= producto.id_producto
                 td= producto.nombre
                 td= producto.precio
                 td= producto.stock
                 td= producto.fecha_creacion
-                td= 'Eliminar Modificar'
+                td
+                  a(class=['ui button basic icon'] href='#' data-inverted='' data-tooltip='Eliminar' data-position='top center' id = 'btn-eliminar')
+                    i(class=['trash icon'])
+                  a(class=['ui button basic icon'] href='#' data-inverted='' data-tooltip='Modificar' data-position='top center')
+                    i(class=['cut icon'])
+
+   script(src='/javascripts/productos.js')
 
 
