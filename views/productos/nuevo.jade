@@ -14,11 +14,17 @@ block content
             div(class=['ui', 'two', 'fields'])
                 div(class=['ui', 'field'])
                     label(for='precio')= 'Precio'
-                    input(type='text' name ='precio' plaeholder='Precio')
+                    input(type='text' name ='precio' placeholder='Precio')
                 div(class=['ui', 'field'])
                     label(for='stock')= 'Stock'
                     input(type='text' name ='stock' placeholder='Stock')
             button(class=['ui', 'button', 'basic', 'black'])= 'Crear Producto'
             div(class=['ui', 'message', 'error'])
+         
+            if info != undefined 
+            div(class=['ui', 'message', 'success'])
+                i(class=['close', 'icon'])
+                div(class='header')= 'Producto Creado Correctamente'
+                p= info
 
     script(src='/javascripts/validacion.js')
