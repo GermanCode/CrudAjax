@@ -76,8 +76,50 @@ module.exports = {
             res.json(respuesta);
         });
 
+    },
 
+    getModificarProducto : function(req, res, next){
 
+        var id = req.params.id;
+       
+        var config = require('.././database/config')
+
+        var db = mysql.createConnection(config);
+        db.connect();
+
+        var producto = null;
+
+        db.query('SELECT * FROM productos WHERE id_producto = ?', id, function(err, rows, fields){
+
+            if(err) throw err;
+
+            producto  = rows;
+            db.end();
+            res.render('productos/modificar', {producto:producto});
+        });
+        
+    },
+
+    postModificarProducto : function(req, res, next){
+
+         var producto =  {
+           nombre : req.body.nombre,
+           precio : req.body.precio,
+           stock : req.body.stock,
+       }
+
+        var config = require('.././database/config')
+
+            var db = mysql.createConnection(config);
+            db.connect();
+
+            db.query('UPDATE productos SET ? WHERE ?', [producto, {id_producto : req.body.id_producto}], function(err, rows, fields){
+                
+                if(err) throw err;
+                db.end();
+            });
+
+            res.redirect('/productos');
 
     }
 }
