@@ -10,7 +10,7 @@ block content
             h2(class=['ui', 'header', 'blue', 'dividing'])= 'Crear Producto'
 
             div(class='form-nuevoproducto')
-                form(class=['ui', 'form'] action='http://localhost:3000/crearproducto' method='post')
+                form(class=['ui', 'form'] action='http://bdcrudajax.herokuapp.com/crearproducto' method='post')
                         div(class=['ui', 'field'])
                                 label(for='nombre')= 'Nombre del producto'
                                 input(type= 'text' name ='nombre' placeholder='Nombre')
