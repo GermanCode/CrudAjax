@@ -1,0 +1,30 @@
+extends ../layout
+block content
+  include ../templates/navU
+  div(class=['ui', 'container', 'grid', 'stackable'])
+    div(class=['sixteen', 'wide', 'column'])
+
+      h2(class=['ui', 'header', 'blue', 'dividing'])= 'Lista de Productos'
+  
+      table(class=['ui', 'table', 'celled'] id = 'tbl-usuarios')
+        thead
+            tr
+                th='Usuario'
+                th='Password'
+                th='Fecha de Creacion'
+                th='Acciones'
+        tbody
+            each usuario in usuarios
+              tr
+                td(id='user')= usuario.user
+                td= usuario.password
+                td= usuario.fecha_creacion
+                td
+                  a(class=['ui button basic icon'] href='#' data-inverted='' data-tooltip='Eliminar' data-position='top center' id = 'btn-eliminar')
+                    i(class=['trash icon'])
+                  a(class=['ui button basic icon'] href='http://localhost:3000/modificarusuarios/'+ usuario.user data-inverted='' data-tooltip='Modificar' data-position='top center')
+                    i(class=['cut icon'])
+
+   script(src='/javascripts/usuarios.js')
+
+

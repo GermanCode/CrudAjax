@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+
+    include ../templates/nav
+
+    div(class=['ui', 'container', 'grid', 'stackable'])
+        div(class=['ten', 'wide', 'column'])
+
+            h2(class=['ui', 'header', 'blue', 'dividing'])= 'Crear Usuario'
+
+            div(class='form-nuevousuario')
+                form(class=['ui', 'form'] action='http://localhost:3000/usuarios/crearusuario' method='post')
+                        div(class=['ui', 'field'])
+                                label(for='user')= 'Usuario'
+                                input(type= 'text' name ='user' placeholder='Usuario')
+                        div(class=['ui', 'one', 'fields'])
+                                div(class=['ui', 'field'])
+                                        label(for='password')= 'Password'
+                                        input(type='text' name ='password' placeholder='Password')
+                               
+                        button(class=['ui', 'button', 'black'])= 'Crear Usuario'
+                        div(class=['ui', 'message', 'error'])
+                 
+                if info != undefined 
+                    div(class=['ui', 'message', 'success'])
+                        i(class=['close', 'icon'])
+                        div(class='header')= 'Usuario Creado Correctamente'
+                        p= info
+
+    script(src='/javascripts/validacion.js')

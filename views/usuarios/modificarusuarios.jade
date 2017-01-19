@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+
+	include ../templates/nav
+
+	div(class=['ui', 'container', 'grid', 'stackable'])
+		div(class=['ten', 'wide', 'column'])
+
+			h2(class=['ui', 'header', 'blue', 'dividing'])= 'Crear Usuario'
+
+			div(class='form-nuevousuario')
+				form(class=['ui', 'form'] action='http://localhost:3000/editarU' method='post')
+						div(class=['ui', 'field'])
+								label(for='user')= 'Nombre del producto'
+								input(type= 'text' name ='usuario' placeholder='usuario' value=usuario[0].user)
+						div(class=['ui', 'one', 'fields'])
+								div(class=['ui', 'field'])
+										label(for='password')= 'Password'
+										input(type='text' name ='password' placeholder='Password' value=usuario[0].password)
+								
+										
+										
+						button(class=['ui', 'button', 'black'])= 'Modificar Usuario'
+						div(class=['ui', 'message', 'error'])
+
+	script(src='/javascripts/validacion.js')
